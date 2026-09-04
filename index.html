@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestión de Museos · Ingreso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main class="access">
+
+    <section class="access__intro" aria-hidden="true">
+      <p class="access__tag">Registro n.º 001</p>
+      <h1 class="access__wordmark">Museos<span class="access__wordmark-line"></span></h1>
+      <p class="access__desc">
+        Plataforma centralizada para la administración de museos, reservas,
+        pagos y tickets.
+      </p>
+    </section>
+
+    <section class="access__panel">
+      <div class="access__panel-inner">
+        <h2 class="access__title">Ingresar al sistema</h2>
+        <p class="access__subtitle">Usa tus credenciales institucionales.</p>
+
+        <form class="form" id="login-form" novalidate>
+          <div class="form__field">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
+          </div>
+
+          <div class="form__field">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+          </div>
+
+          <p class="form__error" id="form-error" role="alert" hidden></p>
+
+          <button type="submit" class="form__submit">Iniciar sesión</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
