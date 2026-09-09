@@ -20,3 +20,28 @@ form.addEventListener("submit", (event) => {
   // Vista de demostración: aquí solo se simula el paso siguiente.
   window.location.href = "museos.html";
 });
+
+// --- Vista de reservas ---
+const reserveForm = document.getElementById("reserve-form");
+
+if (reserveForm) {
+  const reserveError = document.getElementById("reserve-error");
+
+  reserveForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const museo = document.getElementById("museo").value;
+    const fecha = document.getElementById("fecha").value;
+    const personas = document.getElementById("personas").value;
+
+    if (!museo || !fecha || !personas) {
+      reserveError.textContent = "Completa museo, fecha y cantidad de personas.";
+      reserveError.hidden = false;
+      return;
+    }
+
+    reserveError.hidden = true;
+    // Vista de demostración: aquí solo se simula el paso siguiente.
+    window.location.href = "pagos.html";
+  });
+}

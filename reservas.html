@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestión de Museos · Reservas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="topbar__back" href="museos.html">&larr; Museos</a>
+    <span class="topbar__mark">Museos</span>
+  </header>
+
+  <main class="reserve">
+    <div class="reserve__intro">
+      <p class="reserve__tag">Reserva</p>
+      <h1 class="reserve__title">Reserva tu visita</h1>
+      <p class="reserve__subtitle">Completa los datos de tu visita. Podrás revisar el pago en el siguiente paso.</p>
+    </div>
+
+    <form class="form form--reserve" id="reserve-form" novalidate>
+      <div class="form__field">
+        <label for="museo">Museo</label>
+        <select id="museo" name="museo" required>
+          <option value="" selected disabled>Selecciona un museo</option>
+          <option value="Museo de Arte Contemporáneo">Museo de Arte Contemporáneo</option>
+          <option value="Museo de Historia Natural">Museo de Historia Natural</option>
+          <option value="Museo de Ciencia y Tecnología">Museo de Ciencia y Tecnología</option>
+          <option value="Museo de Artes Visuales">Museo de Artes Visuales</option>
+        </select>
+      </div>
+
+      <div class="form__row">
+        <div class="form__field">
+          <label for="fecha">Fecha de visita</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="form__field">
+          <label for="personas">Cantidad de personas</label>
+          <input type="number" id="personas" name="personas" min="1" max="20" value="1" required>
+        </div>
+      </div>
+
+      <p class="form__error" id="reserve-error" role="alert" hidden></p>
+
+      <button type="submit" class="form__submit">Continuar al pago</button>
+    </form>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
