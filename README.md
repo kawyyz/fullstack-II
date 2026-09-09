@@ -4,7 +4,9 @@ Vista de front del Sistema de Gestión de Museos: maqueta en HTML y CSS de cómo
 
 ## Estado del proyecto
 
-Para esta evaluación solo se requiere la vista de front (look & feel de las pantallas), sin conexión a un backend. Por ahora están la vista de inicio de sesión, el listado de museos y la vista de reservas.
+
+Para esta evaluacion se entregara una vista navegable del proyecto.
+
 
 ## Estructura
 
@@ -22,6 +24,10 @@ museos-frontend/
 
 ## Próximos pasos
 
+<<<<<<< HEAD
 - Agregar vistas de pagos y tickets (solo maqueta visual).
+=======
+- Agregar vistas de reservas, pagos y tickets.
+>>>>>>> 12a2bbbebb5f90d067ee74f6a117629bb9053310
 - Agregar navegación común entre todas las vistas.
 - Mantener consistencia de estilos entre todas las vistas.
