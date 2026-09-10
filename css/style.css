@@ -1,6 +1,4 @@
-/* ---------------------------------------------
-   Variables
---------------------------------------------- */
+
 :root {
   --ink: #232019;
   --paper: #fbf6ef;
@@ -13,9 +11,7 @@
   --font-body: "Inter", sans-serif;
 }
 
-/* ---------------------------------------------
-   Base
---------------------------------------------- */
+
 * {
   box-sizing: border-box;
 }
@@ -35,9 +31,7 @@ ul {
   list-style: none;
 }
 
-/* ---------------------------------------------
-   Header
---------------------------------------------- */
+
 .site-header {
   display: flex;
   align-items: center;
@@ -114,9 +108,7 @@ ul {
   justify-content: center;
 }
 
-/* ---------------------------------------------
-   Hero
---------------------------------------------- */
+
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -175,9 +167,7 @@ ul {
   background: linear-gradient(135deg, var(--sand), var(--clay));
 }
 
-/* ---------------------------------------------
-   Products
---------------------------------------------- */
+
 .products {
   max-width: 72rem;
   margin: 0 auto;
@@ -247,9 +237,7 @@ ul {
   color: var(--paper);
 }
 
-/* ---------------------------------------------
-   Footer
---------------------------------------------- */
+
 .site-footer {
   border-top: 1px solid var(--sand-line);
   padding: 2.5rem 2rem;
@@ -314,3 +302,4 @@ ul {
 .site-footer__newsletter-row button:hover {
   background: var(--clay-dark);
 }
+

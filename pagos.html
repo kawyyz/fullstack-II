@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuseoGestión · Pago de Reserva</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .payment-container { max-width: 500px; margin: 3rem auto; padding: 2rem; background: white; border: 1px solid var(--sand-line); }
+    .payment-summary { background: var(--paper); padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .form-group input { width: 100%; padding: 0.7rem; border: 1px solid var(--sand-line); }
+    .btn-pay { width: 100%; padding: 1rem; background: var(--ink); color: var(--paper); border: none; cursor: pointer; font-weight: 600; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__logo" href="index.html">MuseoGestión</a>
+    <nav class="site-nav">
+      <a href="index.html" class="site-nav__link">Inicio</a>
+      <a href="museos.html" class="site-nav__link">Museos</a>
+      <a href="reservas.html" class="site-nav__link">Reservas</a>
+      <a href="tickets.html" class="site-nav__link">Tickets</a>
+      <a href="clientes.html" class="site-nav__link">Mi Perfil</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="payment-container">
+      <h1 style="font-family: var(--font-display);">Finalizar Pago</h1>
+      <div class="payment-summary">
+        <p><strong>Reserva:</strong> #RES-9821</p>
+        <p><strong>Museo:</strong> Seleccionado en el paso anterior</p>
+        <p><strong>Total a pagar:</strong> .000 CLP</p>
+      </div>
+      <form action="tickets.html">
+        <div class="form-group">
+          <label>Número de Tarjeta</label>
+          <input type="text" placeholder="0000 0000 0000 0000" required>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label>Vencimiento</label>
+            <input type="text" placeholder="MM/AA" required>
+          </div>
+          <div class="form-group">
+            <label>CVV</label>
+            <input type="text" placeholder="123" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-pay">Confirmar Pago y Generar Ticket</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

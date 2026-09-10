@@ -1,32 +1,56 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Gestión de Museos · Museos</title>
+  <title>MuseoGestión · Museos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .museums { max-width: 72rem; margin: 0 auto; padding: 4rem 2rem; }
+    .museums__intro { margin-bottom: 3rem; text-align: center; }
+    .museums__tag { color: var(--clay-dark); font-weight: 500; font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .museums__title { font-family: var(--font-display); font-size: 2.5rem; margin: 0 0 1rem; }
+    .museums__subtitle { color: #5b5648; margin-bottom: 2rem; }
+    .museums__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 0; padding: 0; }
+    .museum-card { background: white; border: 1px solid var(--sand-line); border-radius: 8px; overflow: hidden; transition: transform 0.2s; }
+    .museum-card:hover { transform: translateY(-5px); }
+    .museum-card__cover { height: 150px; background: var(--sand); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: 700; color: var(--clay); }
+    .museum-card__body { padding: 1.5rem; }
+    .museum-card__name { font-family: var(--font-display); font-size: 1.2rem; margin: 0 0 0.5rem; }
+    .museum-card__meta { font-size: 0.85rem; color: var(--clay); font-weight: 600; margin-bottom: 0.5rem; }
+    .museum-card__desc { font-size: 0.9rem; color: #5b5648; line-height: 1.5; margin-bottom: 1.5rem; }
+    .museum-card__link { display: block; text-align: center; padding: 0.7rem; background: var(--ink); color: var(--paper); text-decoration: none; font-size: 0.9rem; font-weight: 500; border-radius: 4px; }
+  </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <a class="topbar__back" href="index.html">&larr; Inicio</a>
-    <span class="topbar__mark">Museos</span>
+  <header class="site-header">
+    <a class="site-header__logo" href="index.html">MuseoGestión</a>
+    <nav class="site-nav">
+      <a href="index.html" class="site-nav__link">Inicio</a>
+      <a href="museos.html" class="site-nav__link site-nav__link--active">Museos</a>
+      <a href="reservas.html" class="site-nav__link">Reservas</a>
+      <a href="tickets.html" class="site-nav__link">Tickets</a>
+      <a href="clientes.html" class="site-nav__link">Mi Perfil</a>
+    </nav>
+    <div class="site-header__actions">
+      <a href="login.html" class="site-header__auth">Cerrar sesión</a>
+    </div>
   </header>
 
   <main class="museums">
     <div class="museums__intro">
       <p class="museums__tag">Catálogo</p>
-      <h1 class="museums__title">Museos disponibles</h1>
+      <h1 class="museums__title">Museos Disponibles</h1>
       <p class="museums__subtitle">Elige un museo para revisar sus datos y reservar tu visita.</p>
     </div>
 
     <ul class="museums__grid">
-
       <li class="museum-card">
-        <div class="museum-card__cover" data-letter="AC"></div>
+        <div class="museum-card__cover">AC</div>
         <div class="museum-card__body">
           <h2 class="museum-card__name">Museo de Arte Contemporáneo</h2>
           <p class="museum-card__meta">Santiago Centro</p>
@@ -34,9 +58,8 @@
           <a class="museum-card__link" href="reservas.html">Reservar visita</a>
         </div>
       </li>
-
       <li class="museum-card">
-        <div class="museum-card__cover" data-letter="HN"></div>
+        <div class="museum-card__cover">HN</div>
         <div class="museum-card__body">
           <h2 class="museum-card__name">Museo de Historia Natural</h2>
           <p class="museum-card__meta">Providencia</p>
@@ -44,9 +67,8 @@
           <a class="museum-card__link" href="reservas.html">Reservar visita</a>
         </div>
       </li>
-
       <li class="museum-card">
-        <div class="museum-card__cover" data-letter="CT"></div>
+        <div class="museum-card__cover">CT</div>
         <div class="museum-card__body">
           <h2 class="museum-card__name">Museo de Ciencia y Tecnología</h2>
           <p class="museum-card__meta">Ñuñoa</p>
@@ -54,9 +76,8 @@
           <a class="museum-card__link" href="reservas.html">Reservar visita</a>
         </div>
       </li>
-
       <li class="museum-card">
-        <div class="museum-card__cover" data-letter="AV"></div>
+        <div class="museum-card__cover">AV</div>
         <div class="museum-card__body">
           <h2 class="museum-card__name">Museo de Artes Visuales</h2>
           <p class="museum-card__meta">Lastarria</p>
@@ -64,7 +85,6 @@
           <a class="museum-card__link" href="reservas.html">Reservar visita</a>
         </div>
       </li>
-
     </ul>
   </main>
 

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lumen — Tienda Online</title>
+  <title>Sistema de Gestión de Museos — Inicio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,121 +12,72 @@
 <body>
 
   <header class="site-header">
-    <a class="site-header__logo" href="index.html">Lumen</a>
+    <a class="site-header__logo" href="index.html">MuseoGestión</a>
 
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="index.html" class="site-nav__link site-nav__link--active">Home</a>
-      <a href="#" class="site-nav__link">Productos</a>
-      <a href="#" class="site-nav__link">Nosotros</a>
-      <a href="#" class="site-nav__link">Blogs</a>
-      <a href="#" class="site-nav__link">Contacto</a>
+      <a href="index.html" class="site-nav__link site-nav__link--active">Inicio</a>
+      <a href="museos.html" class="site-nav__link">Museos</a>
+      <a href="reservas.html" class="site-nav__link">Reservas</a>
+      <a href="tickets.html" class="site-nav__link">Tickets</a>
+      <a href="clientes.html" class="site-nav__link">Mi Perfil</a>
     </nav>
 
     <div class="site-header__actions">
-      <a href="#" class="site-header__auth">Iniciar sesión</a>
-      <a href="#" class="site-header__auth">Registrarse</a>
-      <button class="cart-button" type="button" aria-label="Carrito de compras">
-        <span class="cart-button__icon" aria-hidden="true">🛒</span>
-        <span class="cart-button__count" id="cart-count">0</span>
-      </button>
+      <a href="login.html" class="site-header__auth">Cerrar sesión</a>
     </div>
   </header>
 
   <main>
-
     <section class="hero">
       <div class="hero__text">
-        <p class="hero__tag">Nueva colección</p>
-        <h1 class="hero__title">Objetos simples<br>para el día a día</h1>
+        <p class="hero__tag">Bienvenido al sistema</p>
+        <h1 class="hero__title">Gestiona tus visitas<br>culturales en un solo lugar</h1>
         <p class="hero__desc">
-          Piezas de cerámica, textiles y aromas pensadas para hacer
-          de tu casa un lugar más cálido.
+          Explora los museos disponibles, reserva tu entrada y gestiona tus pagos de forma rápida y sencilla.
         </p>
-        <a href="#productos" class="hero__cta">Ver productos</a>
+        <a href="museos.html" class="hero__cta">Explorar Museos</a>
       </div>
-      <div class="hero__image" aria-hidden="true"></div>
+      <div class="hero__image" aria-hidden="true" style="background: linear-gradient(135deg, #ded9c7, #c1633d);"></div>
     </section>
 
-    <section class="products" id="productos">
-      <h2 class="products__title">Destacados</h2>
-
+    <section class="products" id="servicios">
+      <h2 class="products__title">Acceso Rápido</h2>
       <ul class="products__grid">
-
         <li class="product-card">
-          <div class="product-card__image" data-emoji="🕯️"></div>
-          <h3 class="product-card__name">Vela de soja</h3>
-          <p class="product-card__price">$8.990</p>
-          <button class="product-card__add" type="button">Añadir</button>
+          <div class="product-card__image" data-emoji="🏛️"></div>
+          <h3 class="product-card__name">Catálogo de Museos</h3>
+          <p class="product-card__price">Consulta disponibilidad</p>
+          <a href="museos.html" class="product-card__add" style="text-decoration:none; text-align:center; display:block">Ir ahora</a>
         </li>
-
         <li class="product-card">
-          <div class="product-card__image" data-emoji="🏺"></div>
-          <h3 class="product-card__name">Set de tazas de cerámica</h3>
-          <p class="product-card__price">$14.990</p>
-          <button class="product-card__add" type="button">Añadir</button>
+          <div class="product-card__image" data-emoji="📅"></div>
+          <h3 class="product-card__name">Mis Reservas</h3>
+          <p class="product-card__price">Gestiona tus citas</p>
+          <a href="reservas.html" class="product-card__add" style="text-decoration:none; text-align:center; display:block">Ver reservas</a>
         </li>
-
         <li class="product-card">
-          <div class="product-card__image" data-emoji="🧺"></div>
-          <h3 class="product-card__name">Canasto de fibra natural</h3>
-          <p class="product-card__price">$12.500</p>
-          <button class="product-card__add" type="button">Añadir</button>
+          <div class="product-card__image" data-emoji="🎫"></div>
+          <h3 class="product-card__name">Mis Tickets</h3>
+          <p class="product-card__price">Descarga tus entradas</p>
+          <a href="tickets.html" class="product-card__add" style="text-decoration:none; text-align:center; display:block">Ver tickets</a>
         </li>
-
         <li class="product-card">
-          <div class="product-card__image" data-emoji="🧣"></div>
-          <h3 class="product-card__name">Manta de algodón</h3>
-          <p class="product-card__price">$19.990</p>
-          <button class="product-card__add" type="button">Añadir</button>
+          <div class="product-card__image" data-emoji="👤"></div>
+          <h3 class="product-card__name">Mi Perfil</h3>
+          <p class="product-card__price">Datos personales</p>
+          <a href="clientes.html" class="product-card__add" style="text-decoration:none; text-align:center; display:block">Editar perfil</a>
         </li>
-
-        <li class="product-card">
-          <div class="product-card__image" data-emoji="🪔"></div>
-          <h3 class="product-card__name">Difusor de aromas</h3>
-          <p class="product-card__price">$16.990</p>
-          <button class="product-card__add" type="button">Añadir</button>
-        </li>
-
-        <li class="product-card">
-          <div class="product-card__image" data-emoji="🕯️"></div>
-          <h3 class="product-card__name">Portavelas de cerámica</h3>
-          <p class="product-card__price">$9.990</p>
-          <button class="product-card__add" type="button">Añadir</button>
-        </li>
-
-        <li class="product-card">
-          <div class="product-card__image" data-emoji="🧵"></div>
-          <h3 class="product-card__name">Cojín tejido</h3>
-          <p class="product-card__price">$13.990</p>
-          <button class="product-card__add" type="button">Añadir</button>
-        </li>
-
-        <li class="product-card">
-          <div class="product-card__image" data-emoji="🧻"></div>
-          <h3 class="product-card__name">Set de servilletas de lino</h3>
-          <p class="product-card__price">$7.990</p>
-          <button class="product-card__add" type="button">Añadir</button>
-        </li>
-
       </ul>
     </section>
-
   </main>
 
   <footer class="site-footer">
-    <div class="site-footer__brand">Lumen</div>
+    <div class="site-footer__brand">MuseoGestión</div>
     <nav class="site-footer__links" aria-label="Enlaces del pie de página">
-      <a href="#">Hogar</a>
-      <a href="#">Textiles</a>
-      <a href="#">Aromas</a>
+      <a href="index.html">Inicio</a>
+      <a href="museos.html">Museos</a>
+      <a href="clientes.html">Soporte</a>
     </nav>
-    <form class="site-footer__newsletter">
-      <label for="newsletter-email">Mantente al tanto de nuestras novedades.</label>
-      <div class="site-footer__newsletter-row">
-        <input type="email" id="newsletter-email" placeholder="Tu correo electrónico">
-        <button type="submit">Suscribirme</button>
-      </div>
-    </form>
   </footer>
 
   <script src="js/main.js"></script>

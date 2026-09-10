@@ -1,56 +1,78 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Gestión de Museos · Reservas</title>
+  <title>MuseoGestión · Reservas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .reserve { max-width: 600px; margin: 4rem auto; padding: 2rem; background: white; border: 1px solid var(--sand-line); border-radius: 8px; }
+    .reserve__intro { text-align: center; margin-bottom: 3rem; }
+    .reserve__tag { color: var(--clay-dark); font-weight: 500; font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .reserve__title { font-family: var(--font-display); font-size: 2.2rem; margin: 0 0 1rem; }
+    .reserve__subtitle { color: #5b5648; margin-bottom: 2rem; }
+    .form { display: grid; gap: 1.5rem; }
+    .form__field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form__field label { font-weight: 600; font-size: 0.9rem; color: #5b5648; }
+    .form__field input, .form__field select { padding: 0.7rem; border: 1px solid var(--sand-line); font-family: var(--font-body); }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form__submit { background: var(--ink); color: var(--paper); padding: 1rem; border: none; font-weight: 600; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
+    .form__submit:hover { background: var(--clay-dark); }
+  </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <a class="topbar__back" href="museos.html">&larr; Museos</a>
-    <span class="topbar__mark">Museos</span>
+  <header class="site-header">
+    <a class="site-header__logo" href="index.html">MuseoGestión</a>
+    <nav class="site-nav">
+      <a href="index.html" class="site-nav__link">Inicio</a>
+      <a href="museos.html" class="site-nav__link">Museos</a>
+      <a href="reservas.html" class="site-nav__link site-nav__link--active">Reservas</a>
+      <a href="tickets.html" class="site-nav__link">Tickets</a>
+      <a href="clientes.html" class="site-nav__link">Mi Perfil</a>
+    </nav>
+    <div class="site-header__actions">
+      <a href="login.html" class="site-header__auth">Cerrar sesión</a>
+    </div>
   </header>
 
-  <main class="reserve">
-    <div class="reserve__intro">
-      <p class="reserve__tag">Reserva</p>
-      <h1 class="reserve__title">Reserva tu visita</h1>
-      <p class="reserve__subtitle">Completa los datos de tu visita. Podrás revisar el pago en el siguiente paso.</p>
+  <main>
+    <div class="reserve">
+      <div class="reserve__intro">
+        <p class="reserve__tag">Reserva</p>
+        <h1 class="reserve__title">Reserva tu visita</h1>
+        <p class="reserve__subtitle">Completa los datos de tu visita. Podrás revisar el pago en el siguiente paso.</p>
+      </div>
+
+      <form class="form" action="pagos.html">
+        <div class="form__field">
+          <label for="museo">Museo</label>
+          <select id="museo" name="museo" required>
+            <option value="" selected disabled>Selecciona un museo</option>
+            <option value="Museo de Arte Contemporáneo">Museo de Arte Contemporáneo</option>
+            <option value="Museo de Historia Natural">Museo de Historia Natural</option>
+            <option value="Museo de Ciencia y Tecnología">Museo de Ciencia y Tecnología</option>
+            <option value="Museo de Artes Visuales">Museo de Artes Visuales</option>
+          </select>
+        </div>
+
+        <div class="form__row">
+          <div class="form__field">
+            <label for="fecha">Fecha de visita</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+          <div class="form__field">
+            <label for="personas">Cantidad de personas</label>
+            <input type="number" id="personas" name="personas" min="1" max="20" value="1" required>
+          </div>
+        </div>
+
+        <button type="submit" class="form__submit">Continuar al pago</button>
+      </form>
     </div>
-
-    <form class="form form--reserve" id="reserve-form" novalidate>
-      <div class="form__field">
-        <label for="museo">Museo</label>
-        <select id="museo" name="museo" required>
-          <option value="" selected disabled>Selecciona un museo</option>
-          <option value="Museo de Arte Contemporáneo">Museo de Arte Contemporáneo</option>
-          <option value="Museo de Historia Natural">Museo de Historia Natural</option>
-          <option value="Museo de Ciencia y Tecnología">Museo de Ciencia y Tecnología</option>
-          <option value="Museo de Artes Visuales">Museo de Artes Visuales</option>
-        </select>
-      </div>
-
-      <div class="form__row">
-        <div class="form__field">
-          <label for="fecha">Fecha de visita</label>
-          <input type="date" id="fecha" name="fecha" required>
-        </div>
-
-        <div class="form__field">
-          <label for="personas">Cantidad de personas</label>
-          <input type="number" id="personas" name="personas" min="1" max="20" value="1" required>
-        </div>
-      </div>
-
-      <p class="form__error" id="reserve-error" role="alert" hidden></p>
-
-      <button type="submit" class="form__submit">Continuar al pago</button>
-    </form>
   </main>
 
   <script src="js/main.js"></script>
