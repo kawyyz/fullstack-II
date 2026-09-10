@@ -1,47 +1,23 @@
-// Interacción visual de la vista de inicio de sesión.
-// Esta evaluación solo pide la maqueta de front, sin conexión a backend.
+// Interacción visual del Home. El carrito real (con reglas, totales
+// y localStorage) se implementa junto con la vista de carrito de compras.
 
-const form = document.getElementById("login-form");
-const errorMsg = document.getElementById("form-error");
+const cartCount = document.getElementById("cart-count");
+const addButtons = document.querySelectorAll(".product-card__add");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+let count = 0;
 
-  const correo = document.getElementById("correo").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  if (!correo || !password) {
-    errorMsg.textContent = "Completa correo y contraseña para continuar.";
-    errorMsg.hidden = false;
-    return;
-  }
-
-  errorMsg.hidden = true;
-  // Vista de demostración: aquí solo se simula el paso siguiente.
-  window.location.href = "museos.html";
+addButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    count += 1;
+    cartCount.textContent = count;
+  });
 });
 
-// --- Vista de reservas ---
-const reserveForm = document.getElementById("reserve-form");
+// Newsletter: por ahora solo evita el envío real del formulario (sin backend).
+const newsletterForm = document.querySelector(".site-footer__newsletter");
 
-if (reserveForm) {
-  const reserveError = document.getElementById("reserve-error");
-
-  reserveForm.addEventListener("submit", (event) => {
+if (newsletterForm) {
+  newsletterForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const museo = document.getElementById("museo").value;
-    const fecha = document.getElementById("fecha").value;
-    const personas = document.getElementById("personas").value;
-
-    if (!museo || !fecha || !personas) {
-      reserveError.textContent = "Completa museo, fecha y cantidad de personas.";
-      reserveError.hidden = false;
-      return;
-    }
-
-    reserveError.hidden = true;
-    // Vista de demostración: aquí solo se simula el paso siguiente.
-    window.location.href = "pagos.html";
   });
 }

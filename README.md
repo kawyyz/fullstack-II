@@ -1,33 +1,31 @@
-# Sistema de Gestión de Museos — Frontend
+# Lumen — Tienda Online (DSY1104, Evaluación Parcial 1)
 
-Vista de front del Sistema de Gestión de Museos: maqueta en HTML y CSS de cómo se vería la plataforma para administrar museos, clientes, reservas, pagos y tickets.
+Frontend de una tienda online básica, desarrollado con HTML, CSS y JavaScript. El sistema consta de dos partes: la **tienda** (vista pública) y el **administrador** (mantenedor de productos y usuarios).
 
 ## Estado del proyecto
 
-
-Para esta evaluacion se entregara una vista navegable del proyecto.
-
+Este commit inicial define la estructura base del proyecto y la página principal (Home) de la tienda.
 
 ## Estructura
 
 ```
-museos-frontend/
-├── index.html        # Vista de inicio de sesión
-├── museos.html        # Listado de museos
-├── reservas.html       # Formulario de reserva
+tienda-online/
+├── index.html         # Home de la tienda
 ├── css/
-│   └── style.css     # Estilos base (variables, tipografía, layout)
+│   └── style.css      # Estilos base (variables, tipografía, layout, componentes)
 ├── js/
-│   └── main.js        # Interacciones simples de la interfaz (validación visual, sin backend)
-└── assets/            # Íconos e imágenes
+│   └── main.js          # Interacciones de la interfaz (carrito, validaciones)
+└── assets/              # Íconos e imágenes
 ```
 
 ## Próximos pasos
 
-<<<<<<< HEAD
-- Agregar vistas de pagos y tickets (solo maqueta visual).
-=======
-- Agregar vistas de reservas, pagos y tickets.
->>>>>>> 12a2bbbebb5f90d067ee74f6a117629bb9053310
-- Agregar navegación común entre todas las vistas.
-- Mantener consistencia de estilos entre todas las vistas.
+- Registro de usuario e inicio de sesión (con validaciones JS).
+- Listado de productos y detalle de producto.
+- Carrito de compras (con `localStorage`).
+- Nosotros, Blogs (+ detalle) y Contacto.
+- Vista administrador: home, mantenedor de productos y mantenedor de usuarios.
+
+## Requisitos
+
+Basado en la planilla de requerimientos (R.1 a R.15) del Anexo 2 de la evaluación.
