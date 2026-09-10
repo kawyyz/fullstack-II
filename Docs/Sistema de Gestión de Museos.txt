@@ -1,0 +1,89 @@
+Contexto del Proyecto: Sistema de Gestión de Museos
+
+Una institución dedicada a la administración de museos requiere desarrollar un sistema informático que permita gestionar de manera centralizada las principales operaciones relacionadas con sus museos, clientes, reservas y pagos.
+
+El sistema debe contar con una arquitectura completa de frontend y backend, permitiendo que los usuarios interactúen con la plataforma mediante una interfaz web y que esta se comunique con los diferentes servicios del backend mediante APIs REST.
+
+Backend y arquitectura de microservicios
+
+El backend debe implementarse utilizando una arquitectura basada en microservicios, separando las principales funcionalidades del sistema en servicios independientes.
+
+Entre los microservicios desarrollados se encuentran:
+
+MS-Clientes: gestión de clientes y autenticación.
+MS-Museos: administración de los museos.
+MS-Reservas: creación, consulta, actualización y eliminación de reservas.
+MS-Pagos: gestión de pagos asociados a las reservas.
+MS-Tickets: generación y gestión de tickets.
+MS-Notificaciones: gestión de las notificaciones generadas por las operaciones del sistema.
+
+El sistema debe permitir registrar y administrar información de los clientes, incluyendo sus datos personales, credenciales de acceso y rol dentro de la aplicación.
+
+Para controlar el acceso se implementa un mecanismo de autenticación basado en JWT, permitiendo que los usuarios puedan iniciar sesión y obtener un token que posteriormente será utilizado para acceder a los recursos protegidos.
+
+El sistema también debe permitir administrar los museos, manteniendo información relevante de cada establecimiento.
+
+Los clientes pueden realizar reservas, indicando el museo que desean visitar, la fecha de la reserva y la cantidad de personas. Antes de registrar una reserva, el sistema debe validar que tanto el cliente como el museo existan mediante comunicación entre los distintos microservicios.
+
+Una vez realizada una reserva, el sistema permite registrar el pago correspondiente. El microservicio de pagos valida previamente la existencia de la reserva y, una vez confirmado el pago, se realizan procesos adicionales mediante comunicación con otros microservicios, como la generación de un ticket y el envío de una notificación.
+
+La comunicación y descubrimiento de los microservicios se gestiona mediante Eureka, mientras que el API Gateway centraliza el acceso a los diferentes servicios del backend.
+
+Para la comunicación entre microservicios se utiliza WebClient, permitiendo realizar validaciones y ejecutar operaciones entre los distintos componentes del sistema.
+
+Cada microservicio cuenta con su propia lógica de negocio, controladores, servicios, repositorios y entidades, utilizando Spring Boot, Spring Data JPA y MySQL para la implementación y persistencia de los datos.
+
+Las respuestas de los servicios incorporan además HATEOAS, proporcionando enlaces relacionados con los recursos disponibles y facilitando la navegación entre los diferentes endpoints de la API.
+
+Frontend
+
+El sistema debe contar con un frontend web que permita a los usuarios interactuar con las funcionalidades proporcionadas por el backend sin necesidad de utilizar directamente herramientas como Postman o Swagger.
+
+La interfaz debe proporcionar una forma sencilla de acceder a las principales funcionalidades del sistema, incluyendo:
+
+Inicio de sesión.
+Gestión de clientes.
+Visualización y gestión de museos.
+Creación y consulta de reservas.
+Registro y consulta de pagos.
+Visualización de tickets.
+Visualización de información y estados relacionados con las operaciones realizadas.
+
+El frontend debe comunicarse con el backend mediante peticiones HTTP a los endpoints REST expuestos por el API Gateway.
+
+La comunicación entre ambas partes debe considerar:
+
+Métodos HTTP como GET, POST, PUT y DELETE.
+Envío de información mediante cuerpos JSON.
+Recepción y procesamiento de respuestas JSON.
+Manejo de códigos de estado HTTP.
+Manejo de errores provenientes del backend.
+Envío del token JWT en las solicitudes que requieran autenticación.
+Configuración de CORS para permitir la comunicación entre el frontend y el backend cuando se ejecuten en diferentes orígenes.
+Consumo de los endpoints mediante JavaScript y fetch u otro mecanismo equivalente.
+
+El flujo general de comunicación debe seguir una estructura similar a:
+
+Usuario → Frontend → API Gateway → Microservicio → Base de datos
+
+Cuando una operación requiera comunicación con otros servicios, el flujo continúa internamente entre los microservicios mediante WebClient.
+
+Por ejemplo, al realizar un pago desde el frontend:
+
+Usuario → Frontend → Gateway → MS-Pagos → MS-Reservas
+
+Una vez validada la reserva, MS-Pagos registra el pago y se comunica con los servicios correspondientes para generar el ticket y la notificación.
+
+De esta manera, el frontend funciona como la capa de presentación del sistema, mientras que el backend se encarga de la lógica de negocio, persistencia y comunicación entre microservicios.
+
+Contenerización y gestión del proyecto
+
+El sistema debe poder ejecutarse mediante Docker, permitiendo contenerizar los diferentes componentes del backend y facilitar su ejecución de forma independiente.
+
+El código fuente del proyecto se mantiene en GitHub, utilizándolo como repositorio para almacenar y versionar la aplicación.
+
+La solución completa debe permitir demostrar el funcionamiento integrado de:
+
+Frontend + API Gateway + Eureka + Microservicios + Base de datos
+
+El objetivo final es disponer de una plataforma modular, escalable y funcional que permita gestionar las operaciones de un sistema de museos mediante una interfaz web, demostrando la implementación práctica de una arquitectura de microservicios, comunicación entre servicios, persistencia de datos, autenticación JWT, APIs REST, HATEOAS, integración frontend-backend y contenerización mediante Docker.
